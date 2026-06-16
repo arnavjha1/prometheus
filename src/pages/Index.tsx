@@ -157,10 +157,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute -bottom-8 left-8 hidden w-72 rounded-[2rem] border border-border bg-card/70 p-6 text-sm text-muted-foreground shadow-xl md:block">
-              <p className="font-semibold text-foreground">Prometheus learning environment</p>
-              <p className="mt-2">Interactive lessons, student collaboration, and a portfolio-driven path in one place.</p>
-            </div>
           </div>
         </section>
 
