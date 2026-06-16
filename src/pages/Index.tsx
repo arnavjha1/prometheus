@@ -104,30 +104,47 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] w-full rounded-[2rem] border border-border bg-card p-5 shadow-[0_35px_80px_-45px_rgba(15,23,42,0.45)]">
-              <div className="flex h-full flex-col justify-between gap-5">
+            <div className="aspect-[4/3] w-full rounded-[2rem] border border-border bg-card p-6 shadow-[0_35px_80px_-45px_rgba(15,23,42,0.45)]">
+              <div className="flex h-full flex-col justify-between gap-6">
                 <div className="space-y-4">
                   <div className="inline-flex rounded-3xl bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     Student success
                   </div>
-                  <div className="space-y-3">
-                    <div className="h-4 w-3/4 rounded-full bg-border" />
-                    <div className="h-3 w-1/2 rounded-full bg-border" />
+                  <div className="grid gap-3">
+                    <div className="h-4 w-3/4 rounded-full bg-border/50" />
+                    <div className="h-4 w-1/2 rounded-full bg-border/40" />
                   </div>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="h-28 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10" />
-                    <div className="h-28 rounded-3xl bg-gradient-to-br from-secondary/10 to-foreground/5" />
-                    <div className="h-28 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-foreground/5" />
+                    <div className="rounded-[1.75rem] border border-border bg-primary/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.2em] text-primary/80">Live</p>
+                      <p className="mt-3 text-xl font-bold text-foreground">8</p>
+                      <p className="mt-2 text-sm text-muted-foreground">weekly sessions</p>
+                    </div>
+                    <div className="rounded-[1.75rem] border border-border bg-secondary/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.2em] text-secondary/80">Projects</p>
+                      <p className="mt-3 text-xl font-bold text-foreground">14</p>
+                      <p className="mt-2 text-sm text-muted-foreground">completed labs</p>
+                    </div>
+                    <div className="rounded-[1.75rem] border border-border bg-foreground/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Community</p>
+                      <p className="mt-3 text-xl font-bold text-foreground">120+</p>
+                      <p className="mt-2 text-sm text-muted-foreground">active learners</p>
+                    </div>
                   </div>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-3xl border border-border bg-background/80 p-4">
-                    <p className="text-sm font-semibold text-foreground">Live support</p>
-                    <p className="mt-1 text-sm text-muted-foreground">Weekly sessions and coaching.</p>
+                <div className="rounded-[2rem] border border-border bg-background/80 p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-sm font-semibold text-foreground">Next session</p>
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                      Live now
+                    </span>
                   </div>
-                  <div className="rounded-3xl border border-border bg-background/80 p-4">
-                    <p className="text-sm font-semibold text-foreground">Project-first</p>
-                    <p className="mt-1 text-sm text-muted-foreground">Built around hands-on learning.</p>
+                  <div className="mt-5 space-y-3">
+                    <div className="h-4 rounded-full bg-border/60 w-2/3" />
+                    <div className="h-4 rounded-full bg-border/60 w-1/2" />
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      Join a Python project session focused on automation and real-world scripting.
+                    </p>
                   </div>
                 </div>
               </div>
