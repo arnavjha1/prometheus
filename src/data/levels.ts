@@ -1,0 +1,67 @@
+const levels: LevelConfig[] = [
+  {
+    level: 1,
+    title: "Python Fundamentals",
+    description: "Start your coding journey with variables, data types, and basic I/O.",
+    topics: ["Variables", "Data Types", "Input/Output", "Strings", "Numbers"],
+    isAvailable: true,
+    topicDetails: [
+      { name: "Variables", description: "Learn how to store and manipulate data using variables." },
+      { name: "Data Types", description: "Understand integers, floats, strings, and booleans." },
+      { name: "Input/Output", description: "Read user input and display output to the console." },
+      { name: "Strings", description: "Work with text data — slicing, formatting, and methods." },
+      { name: "Numbers", description: "Perform arithmetic and understand numeric operations." },
+    ],
+    githubLink: "about:blank",
+    whatsappLink: "https://chat.whatsapp.com/DzYcETjfoas1Xx757jraJD",
+    nextClass: {
+      startTime: "2026-06-16T09:00:00-15:00",
+      durationMinutes: 60,
+      classLink: "https://meet.google.com/bsx-bqnv-sjt",
+    },
+  },
+  {
+    level: 2,
+    title: "Control Flow & Functions",
+    description: "Learn to make decisions in code and write reusable functions.",
+    topics: ["If/Else", "Loops", "Functions", "Scope", "Error Handling"],
+    isAvailable: true,
+    topicDetails: [
+      { name: "If/Else", description: "Make decisions in your programs with conditional logic." },
+      { name: "Loops", description: "Repeat actions with for and while loops." },
+      { name: "Functions", description: "Write reusable blocks of code with parameters and return values." },
+      { name: "Scope", description: "Understand local vs global variables and namespaces." },
+      { name: "Error Handling", description: "Gracefully handle exceptions with try/except blocks." },
+    ],
+    githubLink: "about:blank",
+    whatsappLink: "https://chat.whatsapp.com/DzYcETjfoas1Xx757jraJD",
+    nextClass: {
+      startTime: "2026-06-16T09:00:00-15:00",
+      durationMinutes: 60,
+      classLink: "https://meet.google.com/uwo-ofkd-myo",
+    },
+  },
+  {
+    level: 3,
+    title: "Data Structures",
+    description: "Master lists, dictionaries, sets, and how to work with complex data.",
+    topics: ["Lists", "Dictionaries", "Tuples", "Sets", "Comprehensions"],
+    isAvailable: true,
+    topicDetails: [
+      { name: "Lists", description: "Store ordered collections and learn indexing, slicing, and iteration." },
+      { name: "Dictionaries", description: "Map keys to values for efficient data lookup." },
+      { name: "Tuples", description: "Use immutable sequences for fixed data." },
+      { name: "Sets", description: "Work with unique collections and set operations." },
+      { name: "Comprehensions", description: "Write concise list, dict, and set expressions." },
+    ],
+    githubLink: "about:blank",
+    whatsappLink: "https://chat.whatsapp.com/DzYcETjfoas1Xx757jraJD",
+    nextClass: {
+      startTime: "2026-06-16T10:00:00-15:00",
+      durationMinutes: 60,
+      classLink: "https://meet.google.com/uwo-ofkd-myo",
+    },
+  },
+];
+ 
+export default levels;
