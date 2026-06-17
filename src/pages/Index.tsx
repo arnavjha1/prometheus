@@ -1,4 +1,8 @@
 import logo from "@/assets/prometheus-logo.png";
+import gallery1 from "@/assets/gallery (1).jpeg";
+import gallery2 from "@/assets/gallery (2).jpeg";
+import gallery3 from "@/assets/gallery (3).jpeg";
+import gallery4 from "@/assets/gallery (4).jpeg";
 import LevelCard from "@/components/LevelCard";
 import levels from "@/data/levels";
 
@@ -8,28 +12,31 @@ const features = [
     description: "Weekly sessions and coaching help students learn by building.",
   },
   {
-    title: "Project-first path",
-    description: "Each level focuses on hands-on coding with real-world outcomes.",
+    title: "Professional IT workers teach classes",
+    description: "Learn from experienced professionals in the field.",
   },
   {
-    title: "Student-friendly pace",
-    description: "Clear steps and simple explanations keep learners moving forward.",
+    title: "Project-first, student-friendly path",
+    description: "Each level focuses on hands-on coding with real-world outcomes. Clear steps and simple explanations keep learners moving forward.",
   },
 ];
 
 const testimonials = [
   {
-    quote: "The classes helped me understand Python in a way that was easy and fun.",
-    author: "Beginner Python Student",
+    quote: "My son liked the activities and learning about AI, ML, and DL. He liked the AI python project very much. Hasith is very confident with using Python to train AI and understands how you train AI models in Python. The instructors were professional, knowledgeable, and very patient. Having teachers with real experience in IT and AI made the lessons practical and engaging. They explained complex concepts in a way that was easy for students to understand.",
+    author: "Krishnaveni - Parent of Hasith (Python L3)",
   },
   {
-    quote: "I enjoyed the projects and now I feel confident writing code.",
-    author: "Intermediate JavaScript Student",
+    quote: "I learned how to code some python with zero previous experience.",
+    author: "Ishan Mani (Python L1)",
   },
-  {
-    quote: "The live sessions made learning feel more engaging and supportive.",
-    author: "Prometheus learner",
-  },
+];
+
+const galleryImages = [
+  { src: gallery1, alt: "Prometheus classroom session" },
+  { src: gallery2, alt: "Prometheus students learning together" },
+  { src: gallery3, alt: "Prometheus live coding class" },
+  { src: gallery4, alt: "Prometheus student project work" },
 ];
 
 const Index = () => {
@@ -47,7 +54,7 @@ const Index = () => {
               <p className="text-sm font-semibold tracking-[0.3em] uppercase text-muted-foreground">
                 Prometheus
               </p>
-              <p className="text-xs text-muted-foreground">Student Portal</p>
+              <p className="text-xs text-muted-foreground">Official Website</p>
             </div>
           </div>
 
@@ -93,7 +100,7 @@ const Index = () => {
                 View learning path
               </a>
               <a
-                href="https://forms.gle/Cc2eyXE55KyKgbbx9"
+                href="https://prometheus-join-portal-two.vercel.app"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/70"
@@ -131,30 +138,6 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="rounded-[2rem] border border-border bg-gradient-to-br from-primary/5 to-background/70 p-5">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-foreground">Code activity</p>
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                      Running
-                    </span>
-                  </div>
-                  <div className="mt-5 space-y-3">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-                      <span className="text-sm text-muted-foreground">python app.py</span>
-                    </div>
-                    <div className="rounded-3xl bg-slate-950/90 p-4 text-sm text-foreground">
-                      <div className="mb-2 rounded-full bg-slate-800/90 h-2 w-3/4" />
-                      <div className="space-y-2">
-                        <div className="h-2 w-full rounded-full bg-slate-800/90" />
-                        <div className="h-2 w-5/6 rounded-full bg-slate-800/90" />
-                        <div className="h-2 w-4/6 rounded-full bg-slate-800/90" />
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground">A dynamic coding animation that shows a live development flow.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -162,16 +145,16 @@ const Index = () => {
 
         <section className="mt-16 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">600+</p>
+            <p className="text-4xl font-black">900+</p>
             <p className="mt-3 text-sm text-muted-foreground">Students enrolled</p>
           </div>
           <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">$60K+</p>
-            <p className="mt-3 text-sm text-muted-foreground">Overall contribution from classes</p>
+            <p className="text-4xl font-black">$100</p>
+            <p className="mt-3 text-sm text-muted-foreground">In hackathon prizes</p>
           </div>
           <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">12+</p>
-            <p className="mt-3 text-sm text-muted-foreground">Trained volunteers</p>
+            <p className="text-4xl font-black">35+</p>
+            <p className="mt-3 text-sm text-muted-foreground">Staff & Trained volunteers</p>
           </div>
         </section>
 
@@ -203,9 +186,15 @@ const Index = () => {
               Read testimonials
             </a>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, idx) => (
-              <div key={idx} className="h-40 rounded-3xl border border-border bg-gradient-to-br from-primary/10 to-secondary/10" />
+          <div className="mt-8 grid max-w-3xl grid-cols-2 gap-4">
+            {galleryImages.map((image) => (
+              <div key={image.src} className="aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-card">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -246,7 +235,7 @@ const Index = () => {
       <footer className="border-t border-border bg-background/90 py-12 text-center text-sm text-muted-foreground">
         <div className="mx-auto max-w-6xl space-y-4 px-6">
           <p>
-            Contact us at <a href="mailto:contact@prometheus.org" className="text-foreground underline">contact@prometheus.org</a>
+            Contact us at <a href="business@prometheuscs.org" className="text-foreground underline">business@prometheuscs.org</a>
           </p>
           <p>© {new Date().getFullYear()} Prometheus. Empowering students through code.</p>
         </div>
