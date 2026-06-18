@@ -95,7 +95,7 @@ const Index = () => {
               </h1>
             </div>
             <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Join hundreds of youth innovators shaping the next wave of technology. Participate in high-impact sprints and showcase your talent.
+              Join hundreds of youth innovators shaping the next wave of technology. Participate in  impactful hackathons to showcase talent and join our classes to learn Python and AI with live guidance from industry professionals. Our project-first curriculum empowers students to build real-world skills and confidence in coding.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-4">
               <a
