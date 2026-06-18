@@ -8,46 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 228 20% 8%;
-    --foreground: 220 20% 90%;
+    --background: 0 0% 97%;
+    --foreground: 0 0% 8%;
 
-    --card: 228 18% 12%;
-    --card-foreground: 220 20% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 228 18% 12%;
-    --popover-foreground: 220 20% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 230 70% 55%;
+    --primary: 237 91% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 228 15% 18%;
-    --secondary-foreground: 220 20% 85%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 228 12% 16%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 0 0% 87%;
+    --muted-foreground: 0 0% 52%;
 
-    --accent: 230 70% 55%;
+    --accent: 237 91% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 228 15% 20%;
-    --input: 228 15% 20%;
-    --ring: 230 70% 55%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 237 91% 55%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
 
-    --sidebar-background: 228 20% 6%;
-    --sidebar-foreground: 220 20% 90%;
-    --sidebar-primary: 230 70% 55%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 237 91% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 228 15% 14%;
-    --sidebar-accent-foreground: 220 20% 90%;
-    --sidebar-border: 228 15% 18%;
-    --sidebar-ring: 230 70% 55%;
+    --sidebar-accent: 0 0% 97%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 92%;
+    --sidebar-ring: 237 91% 55%;
 
-    --glow: 230 80% 60%;
+    --glow: 237 91% 55%;
   }
 }
 
@@ -68,3 +68,22 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/90 backdrop-blur-xl border-b border-gray-100 shadow-sm transition-all duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white rounded-[24px] border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-medium rounded-full px-6 py-3 shadow-md hover:brightness-110 active:scale-95 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-foreground font-medium rounded-full px-6 py-3 border border-gray-200 shadow-sm hover:bg-gray-50 active:scale-95 transition-all duration-300;
+  }
+}
+
