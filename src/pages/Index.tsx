@@ -42,7 +42,7 @@ const galleryImages = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-xl">
+      <header className="glass-panel sticky top-0 z-50">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <img
@@ -75,7 +75,7 @@ const Index = () => {
 
           <a
             href="#levels"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary/70"
+            className="btn-secondary"
           >
             Explore
           </a>
@@ -84,18 +84,26 @@ const Index = () => {
 
       <main className="mx-auto max-w-6xl px-6 py-16">
         <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-primary">Free Python education</p>
-            <h1 className="text-4xl font-black tracking-tight sm:text-5xl">
-              Learn Python, build projects, and join live student sessions.
-            </h1>
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              Prometheus helps students go from fundamentals to real work through curated levels, live lessons, and supportive classroom energy.
+          <div className="space-y-8">
+            <div className="inline-flex rounded-full bg-purple-200 px-4 py-2">
+              <p className="text-sm font-semibold tracking-widest text-purple-700">IMPACT • SPEED • COMMUNITY</p>
+            </div>
+            <div>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+                Build the future at{" "}
+                <span className="text-primary">Prometheus</span>
+              </h1>
+              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-primary mb-8">
+                Hackathons.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Join hundreds of youth innovators shaping the next wave of technology. Participate in high-impact sprints and showcase your talent.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-4">
               <a
                 href="#levels"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/10 transition hover:brightness-105"
+                className="btn-primary"
               >
                 View learning path
               </a>
@@ -103,7 +111,7 @@ const Index = () => {
                 href="https://prometheus-join-portal-two.vercel.app"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/70"
+                className="btn-secondary"
               >
                 Register now
               </a>
@@ -111,30 +119,30 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] w-full rounded-[2rem] border border-border bg-card p-5 shadow-[0_35px_80px_-45px_rgba(15,23,42,0.45)]">
+            <div className="glass-card aspect-[4/3] w-full p-5">
               <div className="flex h-full flex-col justify-between gap-6">
                 <div className="space-y-4">
                   <div className="inline-flex rounded-3xl bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                     Live coding
                   </div>
                   <div className="grid gap-3">
-                    <div className="h-4 w-3/4 rounded-full bg-border/50" />
-                    <div className="h-4 w-1/2 rounded-full bg-border/40" />
+                    <div className="h-4 w-3/4 rounded-full bg-gray-200" />
+                    <div className="h-4 w-1/2 rounded-full bg-gray-200" />
                   </div>
-                  <div className="rounded-[2rem] border border-border bg-background/80 p-4">
+                  <div className="rounded-[2rem] border border-gray-100 bg-gray-50 p-4">
                     <div className="flex items-center gap-2">
                       <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
                       <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
                     </div>
                     <div className="mt-4 space-y-3">
-                      <div className="h-3 rounded-full bg-slate-950/70" />
-                      <div className="h-3 w-5/6 rounded-full bg-slate-950/70" />
+                      <div className="h-3 rounded-full bg-gray-300" />
+                      <div className="h-3 w-5/6 rounded-full bg-gray-300" />
                       <div className="flex items-center gap-2">
                         <div className="h-3 w-3 rounded-full bg-cyan-400 animate-pulse" />
-                        <div className="h-3 w-full rounded-full bg-slate-950/70" />
+                        <div className="h-3 w-full rounded-full bg-gray-300" />
                       </div>
-                      <div className="h-3 w-4/6 rounded-full bg-slate-950/70" />
+                      <div className="h-3 w-4/6 rounded-full bg-gray-300" />
                     </div>
                   </div>
                 </div>
@@ -144,16 +152,16 @@ const Index = () => {
         </section>
 
         <section className="mt-16 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">900+</p>
+          <div className="glass-card p-6 text-center">
+            <p className="text-4xl font-black text-foreground">900+</p>
             <p className="mt-3 text-sm text-muted-foreground">Students enrolled</p>
           </div>
-          <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">$100</p>
+          <div className="glass-card p-6 text-center">
+            <p className="text-4xl font-black text-foreground">$100</p>
             <p className="mt-3 text-sm text-muted-foreground">In hackathon prizes</p>
           </div>
-          <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="text-4xl font-black">35+</p>
+          <div className="glass-card p-6 text-center">
+            <p className="text-4xl font-black text-foreground">35+</p>
             <p className="mt-3 text-sm text-muted-foreground">Staff & Trained volunteers</p>
           </div>
         </section>
@@ -168,7 +176,7 @@ const Index = () => {
           </div>
           <div className="grid gap-4">
             {features.map((feature) => (
-              <div key={feature.title} className="rounded-3xl border border-border bg-card p-6">
+              <div key={feature.title} className="glass-card p-6">
                 <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{feature.description}</p>
               </div>
@@ -188,7 +196,7 @@ const Index = () => {
           </div>
           <div className="mt-8 grid max-w-3xl grid-cols-2 gap-4">
             {galleryImages.map((image) => (
-              <div key={image.src} className="aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-card">
+              <div key={image.src} className="glass-card aspect-[4/3] overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -223,7 +231,7 @@ const Index = () => {
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {testimonials.map((item) => (
-              <div key={item.author} className="rounded-3xl border border-border bg-card p-6">
+              <div key={item.author} className="glass-card p-6">
                 <p className="text-sm leading-relaxed text-foreground">{item.quote}</p>
                 <p className="mt-6 text-sm font-semibold text-primary">{item.author}</p>
               </div>
@@ -232,7 +240,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-background/90 py-12 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-gray-100 bg-white/50 py-12 text-center text-sm text-muted-foreground">
         <div className="mx-auto max-w-6xl space-y-4 px-6">
           <p>
             Contact us at <a href="business@prometheuscs.org" className="text-foreground underline">business@prometheuscs.org</a>

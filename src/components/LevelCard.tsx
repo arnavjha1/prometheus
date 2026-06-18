@@ -8,22 +8,22 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
   const { isLive, isUpcoming, formattedTime } = useClassStatus(nextClass);
 
   const borderClass = isLive
-    ? "border-[hsl(142,70%,45%)]/60 bg-card shadow-[0_0_30px_-5px_hsl(142,70%,45%,0.2)]"
+    ? "border-green-400/60 bg-white shadow-[0_0_30px_-5px_rgb(74,222,128,0.2)]"
     : isAvailable
-      ? "border-primary/30 bg-card hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(var(--glow)/0.15)]"
-      : "border-border bg-card/50 opacity-60";
+      ? "border-gray-100 hover:shadow-md hover:-translate-y-0.5"
+      : "border-gray-100 bg-gray-50/50 opacity-60";
 
   return (
     <div
-      className={`group relative rounded-xl border transition-all duration-300 cursor-pointer ${borderClass}`}
+      className={`group relative glass-card border cursor-pointer transition-all duration-300 ${borderClass}`}
       onClick={() => isAvailable && navigate(`/level/${level}`)}
     >
       {/* Level badge */}
       <div className="absolute -top-3 left-6 flex items-center gap-2">
         <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
           isAvailable
-            ? "bg-primary text-primary-foreground"
-            : "bg-muted text-muted-foreground"
+            ? "bg-primary text-white"
+            : "bg-gray-100 text-muted-foreground"
         }`}>
           {isAvailable ? (
             <><CheckCircle className="h-3 w-3" /> Level {level}</>
@@ -32,7 +32,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
           )}
         </span>
         {isLive && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[hsl(142,70%,40%)] px-3 py-1 text-xs font-semibold text-primary-foreground animate-pulse">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500 px-3 py-1 text-xs font-semibold text-white animate-pulse">
             <Radio className="h-3 w-3" /> Live Now
           </span>
         )}
@@ -45,7 +45,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
 
         <div className="flex flex-wrap gap-2 mb-5">
           {topics.map((topic) => (
-            <span key={topic} className="rounded-md bg-secondary px-2.5 py-1 text-xs text-secondary-foreground">
+            <span key={topic} className="rounded-md bg-gray-100 px-2.5 py-1 text-xs text-muted-foreground">
               {topic}
             </span>
           ))}
@@ -58,7 +58,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[hsl(142,70%,40%)] px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-500 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]"
           >
             <Radio className="h-4 w-4" /> Join Class Now
           </a>
@@ -74,7 +74,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
 
         {/* View Level link */}
         {isAvailable && !isLive && (
-          <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]">
+          <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]">
             View Level <ArrowRight className="h-4 w-4" />
           </button>
         )}
