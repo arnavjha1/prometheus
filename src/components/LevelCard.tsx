@@ -72,11 +72,22 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
           </div>
         )}
 
-        {/* View Level link */}
+        {/* View Level link 
+            <a href="https://prometheus-join-portal-clwm.vercel.app/" className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]">
+            
+            </a>
+        */}
         {isAvailable && !isLive && (
-          <button onclick="window.location.href = 'https://prometheus-join-portal-clwm.vercel.app/'" className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]">
+          
+          <a
+            href="https://prometheus-join-portal-clwm.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]"
+          >
             View Level <ArrowRight className="h-4 w-4" />
-          </button>
+          </a>
         )}
 
         {!isAvailable && (
