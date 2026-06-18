@@ -91,11 +91,8 @@ const Index = () => {
             <div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
                 Build the future at{" "}
-                <span className="text-primary">Prometheus</span>
+                <span className="text-primary">Prometheus.</span>
               </h1>
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-primary mb-8">
-                Hackathons.
-              </h2>
             </div>
             <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
               Join hundreds of youth innovators shaping the next wave of technology. Participate in high-impact sprints and showcase your talent.
@@ -185,14 +182,9 @@ const Index = () => {
         </section>
 
         <section id="gallery" className="mt-20">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-primary">Gallery</p>
-              <h2 className="text-3xl font-bold">Classroom energy in action</h2>
-            </div>
-            <a href="#testimonials" className="text-sm font-medium text-primary hover:underline">
-              Read testimonials
-            </a>
+          <div className="space-y-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary">Gallery</p>
+            <h2 className="text-3xl font-bold">Classroom energy in action</h2>
           </div>
           <div className="mt-8 grid max-w-3xl grid-cols-2 gap-4">
             {galleryImages.map((image) => (
@@ -208,16 +200,11 @@ const Index = () => {
         </section>
 
         <section id="levels" className="mt-20">
-          <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-primary">Learning Path</p>
-              <h2 className="text-3xl font-bold">The current Prometheus learning track</h2>
-            </div>
-            <p className="text-sm text-muted-foreground max-w-md">
-              Explore each level, join live classes, and continue growing with structured Python lessons.
-            </p>
+          <div className="space-y-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary">Learning Path</p>
+            <h2 className="text-3xl font-bold">Join our classes</h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {levels.map((level) => (
               <LevelCard key={level.level} {...level} />
             ))}
