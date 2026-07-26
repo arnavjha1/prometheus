@@ -59,7 +59,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     min-width: 320px;
-    font-family: "Orbitron", system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     background-image:
       linear-gradient(hsl(var(--primary) / 0.035) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--primary) / 0.035) 1px, transparent 1px),
@@ -90,6 +90,8 @@ All colors MUST be HSL.
   h2,
   h3,
   h4 {
+    font-family: "Orbitron", system-ui, sans-serif;
+    letter-spacing: 0.035em;
     text-wrap: balance;
     text-shadow: 0 0 24px hsl(var(--primary) / 0.12);
   }
