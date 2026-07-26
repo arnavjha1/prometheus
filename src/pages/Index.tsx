@@ -39,6 +39,140 @@ const galleryImages = [
   { src: gallery4, alt: "Prometheus student project work" },
 ];
 
+type StaffTier = "co-founder" | "manager" | "board" | "staff";
+
+type StaffMember = {
+  name: string;
+  role: string;
+  biography: string;
+  image: string;
+};
+
+const staffTierClasses: Record<
+  StaffTier,
+  { card: string; role: string; kicker: string }
+> = {
+  "co-founder": {
+    card: "staff-card-co-founder",
+    role: "staff-role-co-founder",
+    kicker: "staff-tier-co-founder",
+  },
+  manager: {
+    card: "staff-card-manager",
+    role: "staff-role-manager",
+    kicker: "staff-tier-manager",
+  },
+  board: {
+    card: "staff-card-board",
+    role: "staff-role-board",
+    kicker: "staff-tier-board",
+  },
+  staff: {
+    card: "staff-card-staff",
+    role: "staff-role-staff",
+    kicker: "staff-tier-staff",
+  },
+};
+
+const staffTiers: {
+  tier: StaffTier;
+  label: string;
+  eyebrow: string;
+  members: StaffMember[];
+}[] = [
+  {
+    tier: "co-founder",
+    label: "Co-Founders",
+    eyebrow: "The spark",
+    members: [
+      {
+        name: "Co-Founder Name",
+        role: "Co-Founder & Executive Director",
+        biography:
+          "Add a short biography about this co-founder's vision, experience, and the work they lead at Prometheus.",
+        image: logo,
+      },
+      {
+        name: "Co-Founder Name",
+        role: "Co-Founder & Program Director",
+        biography:
+          "Add a short biography about this co-founder's impact, background, and commitment to student learning.",
+        image: logo,
+      },
+    ],
+  },
+  {
+    tier: "manager",
+    label: "Managers",
+    eyebrow: "The flame",
+    members: [
+      {
+        name: "Manager Name",
+        role: "Program Manager",
+        biography:
+          "Add a short biography describing the programs, people, or initiatives this manager supports.",
+        image: logo,
+      },
+      {
+        name: "Manager Name",
+        role: "Operations Manager",
+        biography:
+          "Add a short biography describing this manager's experience and role in keeping the team moving.",
+        image: logo,
+      },
+    ],
+  },
+  {
+    tier: "board",
+    label: "Board Members",
+    eyebrow: "Guiding the mission",
+    members: [
+      {
+        name: "Board Member Name",
+        role: "Board Member",
+        biography:
+          "Add a short biography about this board member's expertise and the perspective they bring to Prometheus.",
+        image: logo,
+      },
+      {
+        name: "Board Member Name",
+        role: "Board Member",
+        biography:
+          "Add a short biography about this board member's leadership, community work, or professional background.",
+        image: logo,
+      },
+    ],
+  },
+  {
+    tier: "staff",
+    label: "Staff Members",
+    eyebrow: "Powering every program",
+    members: [
+      {
+        name: "Staff Member Name",
+        role: "Lead Instructor",
+        biography:
+          "Add a short biography about this staff member's teaching experience and the subjects they love to share.",
+        image: logo,
+      },
+      {
+        name: "Staff Member Name",
+        role: "Curriculum Developer",
+        biography:
+          "Add a short biography about this staff member's skills, projects, and contribution to the curriculum.",
+        image: logo,
+      },
+      {
+        name: "Staff Member Name",
+        role: "Community Coordinator",
+        biography:
+          "Add a short biography about this staff member's work with students, families, and the wider community.",
+        image: logo,
+      },
+    ],
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -70,6 +204,9 @@ const Index = () => {
             </a>
             <a href="#levels" className="text-sm font-medium text-muted-foreground transition hover:text-foreground">
               Levels
+            </a>
+            <a href="#team" className="text-sm font-medium text-muted-foreground transition hover:text-foreground">
+              Team
             </a>
           </nav>
 
@@ -150,16 +287,16 @@ const Index = () => {
 
         <section className="mt-16 grid gap-4 sm:grid-cols-3">
           <div className="glass-card p-6 text-center">
-            <p className="text-4xl font-black text-foreground">900+</p>
+            <p className="text-4xl font-black text-foreground">1800+</p>
             <p className="mt-3 text-sm text-muted-foreground">Students enrolled</p>
           </div>
           <div className="glass-card p-6 text-center">
-            <p className="text-4xl font-black text-foreground">$100</p>
+            <p className="text-4xl font-black text-foreground">$1700</p>
             <p className="mt-3 text-sm text-muted-foreground">In hackathon prizes</p>
           </div>
           <div className="glass-card p-6 text-center">
-            <p className="text-4xl font-black text-foreground">35+</p>
-            <p className="mt-3 text-sm text-muted-foreground">Staff & Trained volunteers</p>
+            <p className="text-4xl font-black text-foreground">50+</p>
+            <p className="mt-3 text-sm text-muted-foreground">Recruited Staff & Trainees</p>
           </div>
         </section>
 
@@ -221,6 +358,68 @@ const Index = () => {
               <div key={item.author} className="glass-card p-6">
                 <p className="text-sm leading-relaxed text-foreground">{item.quote}</p>
                 <p className="mt-6 text-sm font-semibold text-primary">{item.author}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="team" className="mt-24 scroll-mt-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary">Our Team</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Meet the people behind Prometheus</h2>
+            <p className="mt-4 text-muted-foreground">
+              Educators, leaders, and community builders working together to make technology education more accessible.
+            </p>
+          </div>
+
+          <div className="mt-14 space-y-16">
+            {staffTiers.map((group) => (
+              <div key={group.tier}>
+                <div className="mb-7 flex items-end justify-between gap-4 border-b border-gray-200 pb-4">
+                  <div>
+                    <p className={`staff-tier-kicker ${staffTierClasses[group.tier].kicker}`}>
+                      {group.eyebrow}
+                    </p>
+                    <h3 className="mt-1 text-2xl font-bold">{group.label}</h3>
+                  </div>
+                  <p className="hidden text-sm text-muted-foreground sm:block">
+                    {group.members.length} {group.members.length === 1 ? "member" : "members"}
+                  </p>
+                </div>
+
+                <div
+                  className={`grid gap-7 sm:grid-cols-2 ${
+                    group.members.length > 2
+                      ? "lg:grid-cols-3"
+                      : "mx-auto lg:max-w-4xl lg:grid-cols-2"
+                  }`}
+                >
+                  {group.members.map((member, index) => (
+                    <article
+                      key={`${group.tier}-${index}`}
+                      className={`staff-card ${staffTierClasses[group.tier].card}`}
+                    >
+                      <div className="staff-card-inner">
+                        <div className="staff-photo">
+                          <img
+                            src={member.image}
+                            alt={`${member.name} profile`}
+                            className="h-full w-full object-contain p-12"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-xl font-bold text-foreground">{member.name}</h4>
+                          <p className={`staff-role ${staffTierClasses[group.tier].role}`}>
+                            {member.role}
+                          </p>
+                          <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                            {member.biography}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

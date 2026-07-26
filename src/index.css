@@ -85,5 +85,120 @@ All colors MUST be HSL.
   .btn-secondary {
     @apply bg-white text-foreground font-medium rounded-full px-6 py-3 border border-gray-200 shadow-sm hover:bg-gray-50 active:scale-95 transition-all duration-300;
   }
+
+  .staff-card {
+    --tier-color: 59 130 246;
+    --tier-glow: 59 130 246;
+    @apply relative rounded-[26px] p-[2px] transition-transform duration-300 hover:-translate-y-1;
+    background: rgb(var(--tier-color));
+    box-shadow: 0 12px 30px rgb(var(--tier-glow) / 0.12);
+  }
+
+  .staff-card-inner {
+    @apply relative z-10 h-full overflow-hidden rounded-[24px] bg-white;
+  }
+
+  .staff-photo {
+    @apply relative aspect-[4/5] overflow-hidden;
+    background:
+      radial-gradient(circle at 70% 20%, rgb(var(--tier-color) / 0.18), transparent 35%),
+      linear-gradient(145deg, rgb(var(--tier-color) / 0.12), rgb(248 250 252));
+  }
+
+  .staff-photo::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(to top, rgb(255 255 255 / 0.2), transparent 35%);
+  }
+
+  .staff-card-co-founder {
+    --tier-color: 147 51 234;
+    --tier-glow: 168 85 247;
+  }
+
+  .staff-card-manager {
+    --tier-color: 249 115 22;
+    --tier-glow: 251 146 60;
+  }
+
+  .staff-card-board {
+    --tier-color: 220 38 38;
+    --tier-glow: 239 68 68;
+  }
+
+  .staff-card-staff {
+    --tier-color: 37 99 235;
+    --tier-glow: 59 130 246;
+  }
+
+  .staff-card-co-founder::before,
+  .staff-card-manager::before {
+    content: "";
+    @apply pointer-events-none absolute -inset-2 rounded-[30px] opacity-75 blur-md;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 15% 100%, rgb(var(--tier-glow) / 0.9) 0 3%, transparent 15%),
+      radial-gradient(ellipse at 42% 100%, rgb(251 146 60 / 0.8) 0 2%, transparent 12%),
+      radial-gradient(ellipse at 72% 100%, rgb(var(--tier-glow) / 0.75) 0 3%, transparent 15%),
+      radial-gradient(ellipse at 92% 100%, rgb(251 191 36 / 0.7) 0 2%, transparent 12%);
+    animation: staff-fire 2.4s ease-in-out infinite alternate;
+  }
+
+  .staff-card-manager::before {
+    @apply -inset-1 blur-sm;
+    opacity: 0.55;
+    transform: scaleY(0.72);
+    transform-origin: bottom;
+    animation-duration: 3s;
+  }
+
+  .staff-role {
+    @apply mt-1.5 text-sm font-semibold;
+  }
+
+  .staff-role-co-founder,
+  .staff-tier-co-founder {
+    @apply text-purple-600;
+  }
+
+  .staff-role-manager,
+  .staff-tier-manager {
+    @apply text-orange-600;
+  }
+
+  .staff-role-board,
+  .staff-tier-board {
+    @apply text-red-600;
+  }
+
+  .staff-role-staff,
+  .staff-tier-staff {
+    @apply text-blue-600;
+  }
+
+  .staff-tier-kicker {
+    @apply text-xs font-bold uppercase tracking-[0.24em];
+  }
 }
 
+@keyframes staff-fire {
+  0% {
+    transform: translateY(2px) scaleX(0.98);
+    filter: saturate(1);
+  }
+  50% {
+    transform: translateY(-3px) scaleX(1.01);
+    filter: saturate(1.25);
+  }
+  100% {
+    transform: translateY(1px) scaleX(1.03);
+    filter: saturate(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-card-co-founder::before,
+  .staff-card-manager::before {
+    animation: none;
+  }
+}
