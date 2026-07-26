@@ -387,13 +387,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div
-                  className={`grid gap-7 sm:grid-cols-2 ${
-                    group.members.length > 2
-                      ? "lg:grid-cols-3"
-                      : "mx-auto lg:max-w-4xl lg:grid-cols-2"
-                  }`}
-                >
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(210px,240px))] justify-center gap-6">
                   {group.members.map((member, index) => (
                     <article
                       key={`${group.tier}-${index}`}
@@ -404,15 +398,15 @@ const Index = () => {
                           <img
                             src={member.image}
                             alt={`${member.name} profile`}
-                            className="h-full w-full object-contain p-12"
+                            className="h-full w-full object-contain p-7"
                           />
                         </div>
-                        <div className="p-6">
-                          <h4 className="text-xl font-bold text-foreground">{member.name}</h4>
+                        <div className="p-4">
+                          <h4 className="text-base font-bold text-foreground">{member.name}</h4>
                           <p className={`staff-role ${staffTierClasses[group.tier].role}`}>
                             {member.role}
                           </p>
-                          <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                          <p className="mt-3 text-xs leading-5 text-muted-foreground">
                             {member.biography}
                           </p>
                         </div>

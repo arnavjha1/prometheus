@@ -99,7 +99,7 @@ All colors MUST be HSL.
   }
 
   .staff-photo {
-    @apply relative aspect-[4/5] overflow-hidden;
+    @apply relative m-4 aspect-square overflow-hidden rounded-[18px];
     background:
       radial-gradient(circle at 70% 20%, rgb(var(--tier-color) / 0.18), transparent 35%),
       linear-gradient(145deg, rgb(var(--tier-color) / 0.12), rgb(248 250 252));
@@ -138,9 +138,9 @@ All colors MUST be HSL.
     z-index: 0;
     background:
       radial-gradient(ellipse at 15% 100%, rgb(var(--tier-glow) / 0.9) 0 3%, transparent 15%),
-      radial-gradient(ellipse at 42% 100%, rgb(251 146 60 / 0.8) 0 2%, transparent 12%),
+      radial-gradient(ellipse at 42% 100%, rgb(var(--tier-glow) / 0.7) 0 2%, transparent 12%),
       radial-gradient(ellipse at 72% 100%, rgb(var(--tier-glow) / 0.75) 0 3%, transparent 15%),
-      radial-gradient(ellipse at 92% 100%, rgb(251 191 36 / 0.7) 0 2%, transparent 12%);
+      radial-gradient(ellipse at 92% 100%, rgb(var(--tier-glow) / 0.6) 0 2%, transparent 12%);
     animation: staff-fire 2.4s ease-in-out infinite alternate;
   }
 
