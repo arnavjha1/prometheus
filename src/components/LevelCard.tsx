@@ -8,10 +8,10 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
   const { isLive, isUpcoming, formattedTime } = useClassStatus(nextClass);
 
   const borderClass = isLive
-    ? "border-green-400/60 bg-white shadow-[0_0_30px_-5px_rgb(74,222,128,0.2)]"
+    ? "border-green-400/60 bg-card shadow-[0_0_30px_-5px_rgb(74,222,128,0.2)]"
     : isAvailable
-      ? "border-gray-100 hover:shadow-md hover:-translate-y-0.5"
-      : "border-gray-100 bg-gray-50/50 opacity-60";
+      ? "border-primary/20 hover:border-primary/50 hover:-translate-y-0.5"
+      : "border-border bg-muted/30 opacity-60";
 
   return (
     <div
@@ -23,7 +23,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
         <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
           isAvailable
             ? "bg-primary text-white"
-            : "bg-gray-100 text-muted-foreground"
+            : "bg-muted text-muted-foreground"
         }`}>
           {isAvailable ? (
             <><CheckCircle className="h-3 w-3" /> Level {level}</>
@@ -45,7 +45,7 @@ const LevelCard = ({ level, title, description, topics, isAvailable, nextClass }
 
         <div className="flex flex-wrap gap-2 mb-5">
           {topics.map((topic) => (
-            <span key={topic} className="rounded-md bg-gray-100 px-2.5 py-1 text-xs text-muted-foreground">
+            <span key={topic} className="rounded-md border border-primary/10 bg-muted px-2.5 py-1 text-xs text-muted-foreground">
               {topic}
             </span>
           ))}

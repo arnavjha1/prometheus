@@ -175,14 +175,14 @@ const staffTiers: {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-transparent text-foreground">
       <header className="glass-panel sticky top-0 z-50">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <img
               src={logo}
               alt="Prometheus"
-              className="h-12 w-12 rounded-2xl border border-border bg-card p-2"
+              className="h-12 w-12 rounded-lg border border-primary/30 bg-card p-2 shadow-[0_0_18px_hsl(var(--primary)/0.18)]"
             />
             <div>
               <p className="text-sm font-semibold tracking-[0.3em] uppercase text-muted-foreground">
@@ -222,8 +222,8 @@ const Index = () => {
       <main className="mx-auto max-w-6xl px-6 py-16">
         <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <div className="space-y-8">
-            <div className="inline-flex rounded-full bg-purple-200 px-4 py-2">
-              <p className="text-sm font-semibold tracking-widest text-purple-700">IMPACT • SPEED • COMMUNITY</p>
+            <div className="inline-flex rounded-md border border-primary/30 bg-primary/10 px-4 py-2 shadow-[inset_0_0_18px_hsl(var(--primary)/0.08)]">
+              <p className="text-xs font-semibold tracking-[0.24em] text-accent">IMPACT • SPEED • COMMUNITY</p>
             </div>
             <div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
@@ -260,23 +260,23 @@ const Index = () => {
                     Live coding
                   </div>
                   <div className="grid gap-3">
-                    <div className="h-4 w-3/4 rounded-full bg-gray-200" />
-                    <div className="h-4 w-1/2 rounded-full bg-gray-200" />
+                    <div className="h-2 w-3/4 rounded-full bg-primary/25" />
+                    <div className="h-2 w-1/2 rounded-full bg-accent/20" />
                   </div>
-                  <div className="rounded-[2rem] border border-gray-100 bg-gray-50 p-4">
+                  <div className="rounded-lg border border-primary/20 bg-background/70 p-4 shadow-[inset_0_0_28px_hsl(var(--primary)/0.05)]">
                     <div className="flex items-center gap-2">
                       <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
                       <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
                     </div>
                     <div className="mt-4 space-y-3">
-                      <div className="h-3 rounded-full bg-gray-300" />
-                      <div className="h-3 w-5/6 rounded-full bg-gray-300" />
+                      <div className="h-2 rounded-full bg-primary/25" />
+                      <div className="h-2 w-5/6 rounded-full bg-accent/20" />
                       <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 rounded-full bg-cyan-400 animate-pulse" />
-                        <div className="h-3 w-full rounded-full bg-gray-300" />
+                        <div className="h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_hsl(var(--accent))]" />
+                        <div className="h-2 w-full rounded-full bg-primary/25" />
                       </div>
-                      <div className="h-3 w-4/6 rounded-full bg-gray-300" />
+                      <div className="h-2 w-4/6 rounded-full bg-accent/20" />
                     </div>
                   </div>
                 </div>
@@ -375,7 +375,7 @@ const Index = () => {
           <div className="mt-14 space-y-16">
             {staffTiers.map((group) => (
               <div key={group.tier}>
-                <div className="mb-7 flex items-end justify-between gap-4 border-b border-gray-200 pb-4">
+                <div className="mb-7 flex items-end justify-between gap-4 border-b border-primary/20 pb-4">
                   <div>
                     <p className={`staff-tier-kicker ${staffTierClasses[group.tier].kicker}`}>
                       {group.eyebrow}
@@ -420,7 +420,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="border-t border-gray-100 bg-white/50 py-12 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-primary/20 bg-background/70 py-12 text-center text-xs tracking-wide text-muted-foreground">
         <div className="mx-auto max-w-6xl space-y-4 px-6">
           <p>
             Contact us at <a href="business@prometheuscs.org" className="text-foreground underline">business@prometheuscs.org</a>
